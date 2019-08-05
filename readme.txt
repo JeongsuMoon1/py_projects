@@ -15,16 +15,10 @@
       생성시 readme, .gitignore (python)으로 체크 및 생성
     - 로컬pc 프로젝트를 만들 위치에서
         public 이면
-        $ git clone https://github.com/JeongsuMoon1/py_projects.git    
+        -> 커맨드 실행 -> cd Desktop  
+        -> $ git clone https://github.com/JeongsuMoon1/py_projects.git   (깃허브에서 관련프로젝트 클릭 후 초록색 버튼 clone을 클릭하고 폴더그림클릭하면 주소 복사됨)
 * github private 학생: 보안설정할 수 있는 방법 찾아볼 것
     
-* source control -> 최초커밋(프로젝트 전체 구조 설정) 작성 -> commit 클릭 -> 에러 -> 
-터미널에서 
-git config --global user.email "appachi2@naver.com"
-git config --global user.name "JeongsuMoon1"
-을 작성 
--> 다시 커밋 시킴
--> 비쥬얼코드 윈도우 창에서 맨 밑에 파란줄에 있는 새로고침 버튼 클릭 -> github에 파일들이 들어와있는지 확인  
 
 - 최초 1회만
  만약, 프로젝트를 먼저 작업하다가, git를 사용한 경우
@@ -38,4 +32,14 @@ git config --global user.name "JeongsuMoon1"
  5) 앞으로는 clone 한 프로젝트 위치가 실제 작업할 곳이 된다
  집에서는 github clone을 받아주면 된다
  6) 
+
+* source control -> 최초커밋(프로젝트 전체 구조 설정) 작성 -> commit 클릭 -> 에러 -> 
+터미널에서 
+git config --global user.email "appachi2@naver.com"
+git config --global user.name "JeongsuMoon1"
+을 작성 
+-> 다시 커밋 시킴
+-> 비쥬얼코드 윈도우 창에서 맨 밑에 파란줄에 있는 새로고침 버튼 클릭 -> github에 파일들이 들어와있는지 확인  
+* 퇴근 시 저장 -> 소스컨트롤에서 다시 커밋시킨후 push 시킴 -> 깃허브에 파일 들어와있는지 확인
+* 집에서 수정후 출근하여 다시 불러들일 경우 -> 소스컨트롤에서 ... 클릭 -> pull 클릭하면 vscode로 들어옴
 
