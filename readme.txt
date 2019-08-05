@@ -37,4 +37,5 @@ git config --global user.name "JeongsuMoon1"
 을 1회 수행해 주면(현재 프로젝트 위치에서) 처리된다.
  5) 앞으로는 clone 한 프로젝트 위치가 실제 작업할 곳이 된다
  집에서는 github clone을 받아주면 된다
+ 6) 
 
