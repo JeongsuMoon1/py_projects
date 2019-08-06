@@ -21,10 +21,15 @@ for item in d:
 # 튜플은 변수로 받을 때 맴버수와 동수로 변수를 나열하면 순서대로 들어간다
 for i,j in d:
     print( i,j )
-# 딕셔너리에서 만약 인덱스를 뽑고 싶다면
-for idx, key in enumerate(b): # enumerate : 내장함수
+# 딕셔너리에서 만약 인덱스를 뽑고 싶다면.
+# enumerate(내장함수 중의 하나) : enumerate는 "열거하다"라는 뜻이다, 
+# 이 함수는 순서가 있는 자료형(리스트, 튜플, 문자열)을 입력으로 받아, 
+# 인덱스 값을 포함하는 enumerate 객체를 돌려준다.
+for idx, key in enumerate(b):  
     print(idx, key)
 # 연속수 만드는 내장함수 => range()
+# range :range([start,] stop [,step] )는 for문과 함께 자주 사용하는 함수이다, 
+# 이 함수는 입력받은 숫자에 해당하는 범위 값을 반복 가능한 객체로 만들어 돌려준다.
 # 0 <= n < 3: 경계값
 for n in range(3):
     print(n)    
