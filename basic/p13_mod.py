@@ -35,10 +35,7 @@ class Person:
         return '''
             name=%s age=%s weight=%s
         ''' % (self.name, self.age, self.weight)
-# 객체 생성
-obj = Person( '품질', 1, 2)
-print( obj )
-obj.eat('1')
+
 
 
 # 상속
@@ -57,15 +54,20 @@ class XMan(Person):
         #  부모 생성자를 이용한 맴버변수 초기화
         super().__init__(name, age, weight)
         self.abil = abil
- 
-mu = XMan( '로건', 200, 100, 103)
-mu.speed()
-mu.eat('닭가슴살')
-print( mu )
 
 
+# p14 에서 넘어온 내용 ( 64, 65번 줄 포함해서)
+# 테스크 코드는 특정 조건을 만족할때만 수행되게 구성
+if __name__ == '__main__':
+    obj = Person( '품질', 1, 2)
+    print( obj )
+    obj.eat('1')
 
-
+    mu = XMan( '로건', 200, 100, 103)
+    mu.speed()
+    mu.eat('닭가슴살')
+    print( mu )
+    print('p13_mod : __name__', __name__)
 
 
 
