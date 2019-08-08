@@ -91,8 +91,5 @@
 #https://developers.naver.com/docs/datalab/search/ 다큐먼트->서비스api->데이터랩->통합검색어트랜드->파이썬
 # 데이터 추출은 서비스api -> 검색 -> 카데고리 선택   
 
-8월8일
-file -> download as -> .py 다운 -> 프로젝트 파일 crawling 파일에 붙여넣기
-쥬피터에서 작성된 소스코드를 덤프시킨다(비쥬얼코드로 가져오기)
 
 
