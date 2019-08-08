@@ -85,7 +85,14 @@
           - 시스템 형태( 웹기반: flask, DJango / GUI:gt5 / 백그라운드 서비스:순수파이썬형태+OS종속적구조)
    - 데이터 획득
 
+
 #naver API 사용을 위한 키,
 #dev.naver.com -> 어플리케이션 등록 -> 아이피 등록 -> 아이디/암호 받을것.( 네이버에서 내 아이피 검색후 http//붙여넣기)
 #https://developers.naver.com/docs/datalab/search/ 다큐먼트->서비스api->데이터랩->통합검색어트랜드->파이썬
 # 데이터 추출은 서비스api -> 검색 -> 카데고리 선택   
+
+8월8일
+file -> download as -> .py 다운 -> 프로젝트 파일 crawling 파일에 붙여넣기
+쥬피터에서 작성된 소스코드를 덤프시킨다(비쥬얼코드로 가져오기)
+
+
