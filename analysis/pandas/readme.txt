@@ -56,6 +56,8 @@
                  
                  --> 쥬피터상에서 analysis 폴더 하위에서 basic, processing 폴더 생성 -> 
                       -> processing 폴더 -> step1_populate_per_cctv_analysis 파일 생성
+             3) 8월 13일 데이터 수집(서울시 자치구 년도별 CCTV 설치 현황)
+                 - 2018년 file 다운로드( 19년도 데이터와 맞지 않아서 사용하지 않음)
                  
  4-2. 5대 강력범죄 분석, CCTV, 인구대비 연관성 및 분석
      - 범죄분석을 통한 서울시 시각화를 도출(지도위에서 표현할 것이다) 
