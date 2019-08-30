@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <fieldset>
+            <h2>언어감지 <span id='lang_detect'></span></h2>
+            <textarea id='input' row='20' cols='50' name='inputLang'></textarea>
+            <br>
+            <button onclick="javascript:onLangTypeDetext();">언어감지하기</button>
+            <button onclick="onLangTransrate();">번역하기</button>
+        </fieldset>
+        <script>
+            function onLangTypeDetext(){ // 버튼의 함수를 준다(오류가 제거 됨)
+                // 언어 감지하기 -> 모델을 이용하여 예측 -> 답안을 구성 언어를 표현
+                // 클라이언트 : 입력값을 획득해서 -> post방식(데이터 양이 많거나, 보안에 관련되어 있을 때 사용)
+                
+                // 1. 언어 종류를 감지하고 있는 입력값 획득
+                let inputData = $('#input').val() //$(): textarea 내용, val: 자바스크립트
+                console.log( inputData )
+                
+                // 2. post로 데이터 전송
+                //$.ajax : 원형대로 , $.post() : post로
+                $.post({
+                    url:'/kfqgo', //run.py의 url가지고 옴
+                    data:`inputLang=${inputData}`,
+                    dataType:'json',
+                    success:( data )=>{
+                        console.log('성공', data ) 
+                    },
+                    error:( err )=>{
+                        console.log('에러', err ) // 웹에서 오류발생(405, 메소드가 존재하지 않는다, 서버에서 문제가 있다(run.py에서 수정s)) 
+                    }
+                        
+                }) 
+
+                // 서비스     : 데이터를 획득 -> 백터화 -> 모델을 로드(서버가동시 1회만) 
+                //              -> 답안을 획득 -> 응답 구성
+                // 클라이언트 : 응답을 받아서 화면처리( ajax )
+            }
+            function onLangTransrate(){
+                // 번역하기 -> 파파고와 연동하여 처리
+            }
+        </script>
+    </body>
+</html> 
