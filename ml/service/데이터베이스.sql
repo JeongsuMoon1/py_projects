@@ -1,0 +1,1 @@
+select src, slang as label from tbl_trans_log;

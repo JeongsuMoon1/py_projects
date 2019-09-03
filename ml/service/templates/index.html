@@ -5,10 +5,14 @@
     <body>
         <fieldset>
             <h2>언어감지 <span id='lang_detect'></span></h2>
-            <textarea id='input' row='20' cols='50' name='inputLang'></textarea>
+            <textarea id='input' row='10' cols='50' name='inputLang'></textarea>
             <br>
             <button onclick="javascript:onLangTypeDetext();">언어감지하기</button>
             <button onclick="onLangTransrate();">번역하기</button>
+        </fieldset>
+        <fieldset>
+            <h2>번역결과</h2>
+            <textarea id='output' row='10' cols='50' name='inputLang'></textarea>
         </fieldset>
         <script>
             function onLangTypeDetext(){ // 버튼의 함수를 준다(오류가 제거 됨)
@@ -17,6 +21,10 @@
                 
                 // 1. 언어 종류를 감지하고 있는 입력값 획득
                 let inputData = $('#input').val() //$(): textarea 내용, val: 자바스크립트
+                if( inputData.length < 30 ){
+                    alert('최소 30자 이상 감지 가능')
+                    return
+                }
                 console.log( inputData )
                 
                 // 2. post로 데이터 전송
@@ -27,6 +35,10 @@
                     dataType:'json',
                     success:( data )=>{
                         console.log('성공', data ) 
+                        // 언어감지 결과를 화면에 표시
+                        $('#lang_detect').html(data.ko)
+                        // 번역결과 화면에 내용 세팅
+                        $('#output').html(data.trans)
                     },
                     error:( err )=>{
                         console.log('에러', err ) // 웹에서 오류발생(405, 메소드가 존재하지 않는다, 서버에서 문제가 있다(run.py에서 수정s)) 

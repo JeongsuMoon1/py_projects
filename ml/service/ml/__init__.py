@@ -5,6 +5,10 @@ import os
 import re
 import json
 
+
+# 서버가 재가동될 때 => 예측모델을 로드하므로 => 이 위치를 최신으로 갱신해준다
+# 예측모델
+
 #  학습데이터 로드 ( 머신러닝한 데이터를 끌고온다 )
 # 모든 경로는 entry 포인트를 기준으로 따진다( run.py 기준의 관점에서는 ml->clf_lang으로 흘러간다)
 # 툴에서는 작업 환경이 py_projects/ml/service에서 작업하엿다
@@ -34,7 +38,6 @@ def detect_lang( text ):  # 여기서-> 최종부분 -> run.py에서 29번줄로
     if not total_cnt: # total_cnt == 0: # 빈도가 없다 -> 알파벳아님 -> 판독불가
         return None, None
     freq = list(map( lambda x: x/total_cnt, cnts )) # 정규화
-    
     
 
     # 예측판정
