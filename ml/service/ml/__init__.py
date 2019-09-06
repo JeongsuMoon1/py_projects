@@ -4,6 +4,10 @@ from sklearn.externals import joblib
 import os
 import re
 import json
+# 서브 패키지라고, 무조건, 패키지 경로는 앤트리 파일부터 따지는 경로를 지정
+from db import selectModelInfo
+
+info = selectModelInfo()
 
 
 # 서버가 재가동될 때 => 예측모델을 로드하므로 => 이 위치를 최신으로 갱신해준다
@@ -12,11 +16,11 @@ import json
 #  학습데이터 로드 ( 머신러닝한 데이터를 끌고온다 )
 # 모든 경로는 entry 포인트를 기준으로 따진다( run.py 기준의 관점에서는 ml->clf_lang으로 흘러간다)
 # 툴에서는 작업 환경이 py_projects/ml/service에서 작업하엿다
-ml_model_file = './ml/clf_lang_20190830.model'
-clf = joblib.load( ml_model_file )
+ml_model_file = info['dir']#'./ml/clf_lang_20190830.model'
+clf           = joblib.load( ml_model_file )
 
 # 정답 로드
-ml_label_file = './ml/clf_lang_labels.label'
+ml_label_file = info['label']
 with open(ml_label_file, 'r') as f:
     clf_label = json.load(f)    
 

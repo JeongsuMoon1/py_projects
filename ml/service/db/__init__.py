@@ -4,6 +4,7 @@ import pymysql
 # 함수화
 def selectData( uid ):
     connection = None
+    result     = None
     # 아이디가 guest인 데이터만 가져와라
     try:
 
@@ -25,7 +26,7 @@ def selectData( uid ):
 
             result = cursor.fetchall()
 
-            print(result)
+            #print(result)
 
         
 
@@ -34,11 +35,42 @@ def selectData( uid ):
     finally:
         if connection:
             connection.close()
+    return result
+
+
+# 머신러닝 모델 정보 가져오기
+def selectModelInfo():
+    connection = None
+    result     = None
+    try:
+            connection = pymysql.connect(host='localhost',
+                                        user='root',
+                                        password='1234',
+                                        db='python_db',
+                                        charset='utf8mb4',
+                                        cursorclass=pymysql.cursors.DictCursor)
+
+            with connection.cursor() as cursor:
+                sql = '''
+                select dir, label from predict_model_mgr
+                where ver=(select model_ver from sys_config);
+                '''
+            cursor.execute(sql)
+            result = cursor.fetchone()
+
+    except Exception as e:
+        print('오류 발생', e) 
+    finally:
+        if connection:
+            connection.close()
+    # 결과 리턴
+    return result       
+
 
 # 번역 요청 데이터 삽입하는 함수
 def insertData( src, out, slang, olang, uid='guest' ):
     connection = None
-    result     = None  # result의 결과값은 rows의 숫자갑을 리턴받는다. 때문에, 오류의 none값도 숫자0으로 처리
+    result     = 0  # result의 결과값은 rows의 숫자갑을 리턴받는다. 때문에, 오류의 none값도 숫자0으로 처리
     try:
         connection = pymysql.connect(host='localhost',
                                     user='root',
@@ -64,7 +96,8 @@ def insertData( src, out, slang, olang, uid='guest' ):
         print('오류 발생', e) 
     finally:
         if connection:
-            connection.close()
+         connection.close()
+         
     # 결과 리턴
     return result
 
