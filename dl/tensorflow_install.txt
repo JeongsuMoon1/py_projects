@@ -1,0 +1,4 @@
+pip install wrapt --upgrade --ignore-installed
+conda install tensorflow
+¾ÈµÇ¸é
+pip install tensorflow
